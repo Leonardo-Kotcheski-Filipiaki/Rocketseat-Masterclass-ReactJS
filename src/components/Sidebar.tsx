@@ -2,105 +2,58 @@ import "../css/Sidebar.css"
 import { useState } from "react"
 import TwitterLogo from "../assets/logo-twitter.svg"
 import { Bell, BookmarkSimple, DotsThreeCircle, EnvelopeSimple, FileText, Hash, House, User } from "phosphor-react"
+import { NavLink } from "react-router-dom"
 
 
 
 export function Sidebar() {
 
-  const [page, setPage] = useState("")
-
-  const activeChange = () => {
-    setPage(window.location.href.split('/')[3])
-  }
-
     return(
-    <aside className="sidebar" onLoad={activeChange}>
+    <aside className="sidebar" >
           <img className="logo" src={TwitterLogo} alt="logo" />
           {
             //#region NAVBAR REGION
            }
           <nav className="main-navigation">
-              <a href="/home" className=
-              {
-                page == 'home' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'home' ? (<House weight="fill"/>) : (<House/>)
-              } 
+              <NavLink to="/" >
+                <House/>
                 Home
-              </a>
-              <a href="/explore" className=
-              {
-                page == 'explore' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'explore' ? (<Hash weight="fill"/>) : (<Hash/>)
-              } 
+              </NavLink>
+
+              <NavLink to="/explore">
+                <Hash/>
                 Explore
-              </a>
-              <a href="/notifications" className=
-              {
-                page == 'notifications' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'notifications' ? (<Bell weight="fill"/>) : (<Bell />)
-              }
-                
+              </NavLink>
+
+              <NavLink to="/notifications">
+                <Bell/>
                 Notifications
-              </a>
-              <a href="/messages" className=
-              {
-                page == 'messages' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'messages' ? (<EnvelopeSimple weight="fill"/>) : (<EnvelopeSimple />)
-              }
+              </NavLink>
+
+              <NavLink to="/messages">
+                <EnvelopeSimple/>
                 Messages
-              </a>
-              <a href="/bookmarks" className=
-              {
-                page == 'bookmarks' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'bookmarks' ? (<BookmarkSimple weight="fill"/>) : (<BookmarkSimple />)
-              }
+              </NavLink>
+
+              <NavLink to="/bookmarks">
+                <BookmarkSimple/>
                 Bookmarks
-              </a>
-              <a href="/lists" className=
-              {
-                page == 'lists' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'lists' ? (<FileText weight="fill"/>) : (<FileText />)
-              } 
+              </NavLink>
+
+              <NavLink to="/lists">
+                <FileText/>
                 Lists
-              </a>
-              <a href="/profile" className=
-              {
-                page == 'profile' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'profile' ? (<User weight="fill"/>) : (<User />)
-              }
+              </NavLink>
+
+              <NavLink to="/profile">
+                <User/>
                 Profile
-              </a>
-              <a href="/more" className=
-              {
-                page == 'more' ? "active" : "notActive"
-              } 
-              onClick={activeChange}>
-              {
-                page == 'more' ? (<DotsThreeCircle weight="fill"/>) : (<DotsThreeCircle />)
-              }
+              </NavLink>
+
+              <NavLink to="/more">
+                <DotsThreeCircle/>
                 More
-              </a>
+              </NavLink>
           {
             //#endregion
           }

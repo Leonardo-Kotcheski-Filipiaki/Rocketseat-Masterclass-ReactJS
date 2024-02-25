@@ -1,7 +1,7 @@
 import "../css/Sidebar.css"
 import { useState } from "react"
 import TwitterLogo from "../assets/logo-twitter.svg"
-import { Bell, BookmarkSimple, DotsThreeCircle, EnvelopeSimple, FileText, Hash, House, User } from "phosphor-react"
+import { Bell, BookmarkSimple, DotsThreeCircle, EnvelopeSimple, FileText, Hash, House, Pencil, User } from "phosphor-react"
 import { NavLink } from "react-router-dom"
 
 
@@ -17,49 +17,50 @@ export function Sidebar() {
           <nav className="main-navigation">
               <NavLink to="/" >
                 <House/>
-                Home
+                <span>Home</span>
               </NavLink>
 
               <NavLink to="/explore">
                 <Hash/>
-                Explore
+                <span>Explore</span>
               </NavLink>
 
               <NavLink to="/notifications">
                 <Bell/>
-                Notifications
+                <span>Notifications</span>
               </NavLink>
 
               <NavLink to="/messages">
                 <EnvelopeSimple/>
-                Messages
+                <span>Messages</span>
               </NavLink>
 
               <NavLink to="/bookmarks">
                 <BookmarkSimple/>
-                Bookmarks
+                <span>Bookmarks</span>
               </NavLink>
 
               <NavLink to="/lists">
                 <FileText/>
-                Lists
+                <span>Lists</span>
               </NavLink>
 
               <NavLink to="/profile">
                 <User/>
-                Profile
+                <span>Profile</span>
               </NavLink>
 
               <NavLink to="/more">
                 <DotsThreeCircle/>
-                More
+                <span>More</span>
               </NavLink>
           {
             //#endregion
           }
           </nav>
           <button className="new-tweet" type="button">
-            Tweet
+            <span>Tweet</span>
+            <Pencil/>
           </button>
       </aside>
     )

@@ -9,6 +9,11 @@ export const router = createBrowserRouter([
         element: <Default/>,
         children: [
             {
+                path: '/',
+                element: <Timeline />
+            },
+
+            {
                 path: '/status',
                 element: <Status />
             },

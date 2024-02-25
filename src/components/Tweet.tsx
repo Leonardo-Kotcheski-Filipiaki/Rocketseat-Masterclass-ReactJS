@@ -3,7 +3,7 @@ import "../css/Tweet.css"
 import { Link } from "react-router-dom";
 
 interface TweetProps{
-    content: string;
+    content: string
 }
 
 export function Tweet(props: TweetProps) {
